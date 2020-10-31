@@ -39,12 +39,7 @@ export class NotificationsPage implements OnInit {
       id: 'events',
       pages: [
         { id: 'friend_requests', icon: 'add', color: 'primary', link: 'friend-requests' },
-        { id: 'people_you_may_know', icon: 'person', color: 'primary', link: 'people-you-may-know' },
         { id: 'community_invitations', icon: 'mail', color: 'primary', link: 'community-invitations' },
-        { id: 'photo_tags', icon: 'camera', color: 'success', link: 'photo-tags' },
-        { id: 'birthdays', icon: 'gift', color: 'danger', link: 'birthdays' },
-        { id: 'upcoming_events', icon: 'calendar', color: 'danger', link: 'upcoming-events' },
-        { id: 'interesting-posts', icon: 'flame', color: 'danger', link: 'interesting-posts' }
       ]
     },
     {

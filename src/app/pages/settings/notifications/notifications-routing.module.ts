@@ -17,13 +17,6 @@ import { MentionsMessagesComponent } from './feedback/mentions-messages/mentions
 import { PostsComponent } from './feedback/posts/posts.component';
 import { RelatedYouComponent } from './feedback/related-you/related-you.component';
 import { ParticipationPollsComponent } from './feedback/participation-polls/participation-polls.component';
-import { FriendRequestsComponent } from './events/friend-requests/friend-requests.component';
-import { PeopleYouMayKnowComponent } from './events/people-you-may-know/people-you-may-know.component';
-import { CommunityInvitationsComponent } from './events/community-invitations/community-invitations.component';
-import { PhotoTagsComponent } from './events/photo-tags/photo-tags.component';
-import { BirthdaysComponent } from './events/birthdays/birthdays.component';
-import { UpcomingEventsComponent } from './events/upcoming-events/upcoming-events.component';
-import { InterestingPostsComponent } from './events/interesting-posts/interesting-posts.component';
 
 import { NewPostComponent } from './other/new-post/new-post.component';
 import { ClosedCommunityPostsComponent } from './other/closed-community-posts/closed-community-posts.component';
@@ -54,13 +47,6 @@ const pagesDeclarations = [
   PostsComponent,
   RelatedYouComponent,
   ParticipationPollsComponent,
-  FriendRequestsComponent,
-  PeopleYouMayKnowComponent,
-  CommunityInvitationsComponent,
-  PhotoTagsComponent,
-  BirthdaysComponent,
-  UpcomingEventsComponent,
-  InterestingPostsComponent,
 
   NewPostComponent,
   ClosedCommunityPostsComponent,
@@ -92,13 +78,6 @@ const routes: Routes = [
   { path: 'related-you', component: RelatedYouComponent },
   { path: 'participation-polls', component: ParticipationPollsComponent },
 
-  { path: 'friend-requests', component: FriendRequestsComponent },
-  { path: 'people-you-may-know', component: PeopleYouMayKnowComponent },
-  { path: 'community-invitations', component: CommunityInvitationsComponent },
-  { path: 'photo-tags', component: PhotoTagsComponent },
-  { path: 'birthdays', component: BirthdaysComponent },
-  { path: 'upcoming-events', component: UpcomingEventsComponent },
-  { path: 'interesting-posts', component: InterestingPostsComponent },
 
   { path: 'new-post', component: NewPostComponent },
   { path: 'closed-community-posts', component: ClosedCommunityPostsComponent },
