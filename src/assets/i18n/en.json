@@ -36,9 +36,6 @@
         "travel": "Travel"
     },
     "settings_notifications": {
-        "private_messages": "Private Messages",
-        "group_chats": "Group Chats",
-        "community_messages": "Community Messages",
         "communities_notifications": "Notifications from Communities",
         "shared": "Shared",
         "friend_requests": "Friend Requests",
@@ -65,7 +62,6 @@
         "hidden_friends": "Who can view my hidden friends",
         "wall_send": "Who can post to my wall",
         "photos_tagme": "Who can tag me in photos",
-        "mail_send": "Who can send me private messages",
         "calls": "Who can call me",
         "appscall": "Who can invite me to open apps",
         "groups_invite": "Who can invite me to communities",

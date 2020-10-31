@@ -14,7 +14,6 @@ export class PrivacyPage implements OnInit {
         { id: 'profile', link: 'profile' },
         { id: 'photos_with', link: 'photos-with' },
         { id: 'photos_saved', link: 'photos-saved' },
-        { id: 'groups', link: 'groups' },
         { id: 'audios', link: 'audios' },
         { id: 'gifts', link: 'gifts' },
         { id: 'places', link: 'places' },

@@ -2,9 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { NotificationsPage } from './notifications.page';
-import { PrivateMessagesComponent } from './messages/private-messages/private-messages.component';
-import { GroupChatsComponent } from './messages/group-chats/group-chats.component';
-import { CommunityMessagesComponent } from './messages/community-messages/community-messages.component';
 
 import { CommunitiesNotificationsComponent } from './sources/communities-notifications/communities-notifications.component';
 
@@ -22,10 +19,6 @@ import { StoreComponent } from './other/store/store.component';
 const pagesDeclarations = [
   NotificationsPage,
 
-  PrivateMessagesComponent,
-  GroupChatsComponent,
-  CommunityMessagesComponent,
-
   CommunitiesNotificationsComponent,
 
   NewPostComponent,
@@ -42,9 +35,6 @@ const pagesDeclarations = [
 
 const routes: Routes = [
   { path: '', component: NotificationsPage },
-  { path: 'private-messages', component: PrivateMessagesComponent },
-  { path: 'group-chats', component: GroupChatsComponent },
-  { path: 'community-messages', component: CommunityMessagesComponent },
 
   { path: 'communities-notifications', component: CommunitiesNotificationsComponent },
 

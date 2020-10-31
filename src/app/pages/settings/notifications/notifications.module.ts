@@ -5,10 +5,6 @@ import { NotificationsPageRoutingModule } from './notifications-routing.module';
 
 import { NotificationsPage } from './notifications.page';
 
-import { PrivateMessagesComponent } from './messages/private-messages/private-messages.component';
-import { GroupChatsComponent } from './messages/group-chats/group-chats.component';
-import { CommunityMessagesComponent } from './messages/community-messages/community-messages.component';
-
 import { CommunitiesNotificationsComponent } from './sources/communities-notifications/communities-notifications.component';
 
 
@@ -30,10 +26,6 @@ import { StoreComponent } from './other/store/store.component';
   ],
   declarations: [
     NotificationsPage,
-
-    PrivateMessagesComponent,
-    GroupChatsComponent,
-    CommunityMessagesComponent,
 
     CommunitiesNotificationsComponent,
 

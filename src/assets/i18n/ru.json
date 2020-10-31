@@ -35,9 +35,6 @@
         "travel": "Туризм"
     },
     "settings_notifications": {
-        "private_messages": "Личные сообщения",
-        "group_chats": "Груповые чаты",
-        "community_messages": "Сообщения сообществ",
         "communities_notifications": "Управления от сообществ",
         "friend_requests": "Заявки в друзья",
         "community_invitations": "Приглашения в сообщества",
@@ -63,7 +60,6 @@
         "hidden_friends": "Who can view my hidden friends",
         "wall_send": "Who can post to my wall",
         "photos_tagme": "Who can tag me in photos",
-        "mail_send": "Who can send me private messages",
         "calls": "Who can call me",
         "appscall": "Who can invite me to open apps",
         "groups_invite": "Who can invite me to communities",

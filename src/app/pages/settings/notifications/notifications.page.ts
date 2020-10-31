@@ -11,8 +11,6 @@ export class NotificationsPage implements OnInit {
       id: 'messages_title',
       pages: [
         { id: 'private_messages', icon: 'chatbubble', color: 'medium', link: 'private-messages' },
-        { id: 'group_chats', icon: 'people', color: 'medium', link: 'group-chats' },
-        { id: 'community_messages', icon: 'chatbubbles', color: 'warning', link: 'community-messages' }
       ]
     },
     {
