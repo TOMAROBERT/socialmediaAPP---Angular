@@ -9,10 +9,6 @@ const routes: Routes = [
   {
     path: 'bookmarks',
     loadChildren: () => import('./pages/bookmarks/bookmarks.module').then(m => m.BookmarksPageModule)
-  },
-  {
-    path: 'message-detail',
-    loadChildren: () => import('./pages/message-detail/message-detail.module').then(m => m.MessageDetailPageModule)
   }
 ];
 @NgModule({

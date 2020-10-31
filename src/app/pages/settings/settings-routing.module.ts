@@ -13,14 +13,6 @@ const routes: Routes = [
     loadChildren: () => import('./notifications/notifications.module').then( m => m.NotificationsPageModule)
   },
   {
-    path: 'account',
-    loadChildren: () => import('./account/account.module').then( m => m.AccountPageModule)
-  },
-  {
-    path: 'appearance',
-    loadChildren: () => import('./appearance/appearance.module').then( m => m.AppearancePageModule)
-  },
-  {
     path: 'general',
     loadChildren: () => import('./general/general.module').then( m => m.GeneralPageModule)
   },

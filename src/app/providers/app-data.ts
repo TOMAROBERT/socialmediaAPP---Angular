@@ -9,7 +9,6 @@ export interface AppDataInterface {
     messages: any[];
     messagesUser: any[];
     playlists: any[];
-    musics: any[];
 }
 
 @Injectable({
@@ -45,12 +44,6 @@ export class AppData {
     async getPlaylists() {
         return this.load().then((data) => {
             return data.playlists;
-        });
-    }
-
-    async getMusics() {
-        return this.load().then((data) => {
-            return data.musics;
         });
     }
 

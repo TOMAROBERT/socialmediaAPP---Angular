@@ -29,10 +29,10 @@ const routes: Routes = [
             path: '',
             loadChildren: () => import('./explore/explore.module').then(m => m.ExplorePageModule)
           },
-          {
-            path: 'music',
-            loadChildren: () => import('../pages/music/music.module').then(m => m.MusicPageModule)
-          },
+          // {
+          //   path: 'music',
+          //   loadChildren: () => import('../pages/music/music.module').then(m => m.MusicPageModule)
+          // },
           {
             path: 'friends',
             loadChildren: () => import('../pages/friends/friends.module').then(m => m.FriendsPageModule)

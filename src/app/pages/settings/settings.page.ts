@@ -8,8 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class SettingsPage implements OnInit {
   settings: any[] = [
     { id: 'notifications', icon: 'notifications-outline', link: 'notifications' },
-    { id: 'account', icon: 'person-outline', link: 'account' },
-    { id: 'appearance', icon: 'color-palette-outline', link: 'appearance' },
     { id: 'general', icon: 'settings-outline', link: 'general' },
     { id: 'security', icon: 'lock-closed-outline', link: 'security' },
     { id: 'privacy', icon: 'hand-left-outline', link: 'privacy' },

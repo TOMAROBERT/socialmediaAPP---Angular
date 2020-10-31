@@ -1,7 +1,6 @@
 {
     "friends_title": "Friends",
     "communities_title": "Communities",
-    "music_title": "Music",
     "stickers_title": "Stickers",
     "videos_title": "Videos",
     "live_streams_title": "Live Streams",
@@ -22,8 +21,6 @@
     "feedback": "Обратная связь",
     "events": "События",
     "other": "Другие",
-    "account_title": "Аккаунт",
-    "appearance_title": "Внешний вид",
     "general_title": "Основные",
     "security_title": "Безопасность",
     "privacy_title": "Приватность",
@@ -40,8 +37,7 @@
         "it": "IT",
         "photos": "Фото",
         "movies": "Кино",
-        "travel": "Туризм",
-        "music": "Музыка"
+        "travel": "Туризм"
     },
     "settings_notifications": {
         "private_messages": "Личные сообщения",
@@ -80,7 +76,6 @@
         "photos_with": "Who can view photos of me",
         "photos_saved": "Who can view the album",
         "groups": "Who can view my list of groups",
-        "audios": "Who can view my music",
         "gifts": "Who can view my gifts",
         "places": "Who can view my photos location",
         "friends": "Who is visible in my list of friends and followed users",

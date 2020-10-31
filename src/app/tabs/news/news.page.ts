@@ -29,8 +29,7 @@ export class NewsPage implements OnInit {
     { id: 'it' },
     { id: 'photos' },
     { id: 'movies' },
-    { id: 'travel' },
-    { id: 'music' }
+    { id: 'travel' }
   ];
   discavery = [];
 

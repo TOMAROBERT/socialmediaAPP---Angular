@@ -19,18 +19,12 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { reducers, metaReducers } from './shared/shared.state';
 import { SettingsEffects } from './shared/ngrx/settings/settings.effects';
-import { MusicEffects } from './shared/ngrx/music/music.effects';
 import { SharedModule } from './shared/shared.module';
-import { MusicPlayerComponent } from './shared/components/music-player/music-player.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MusicPlayerComponent,
-  ],
-  entryComponents: [
-    MusicPlayerComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -54,8 +48,7 @@ import { MusicPlayerComponent } from './shared/components/music-player/music-pla
     /* NGRX */
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot([
-      SettingsEffects,
-      MusicEffects
+      SettingsEffects
     ])
   ],
   providers: [

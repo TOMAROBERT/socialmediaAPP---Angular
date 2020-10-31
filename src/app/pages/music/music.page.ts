@@ -37,9 +37,9 @@ export class MusicPage implements OnInit {
     this.appData.getPlaylists().then((playlist) => {
       this.playlists = playlist;
 
-      this.appData.getMusics().then((music) => {
-        this.musics = music;
-      });
+    //   this.appData.getMusics().then((music) => {
+    //     this.musics = music;
+    //   });
     });
 
     setTimeout(() => {
@@ -63,10 +63,10 @@ export class MusicPage implements OnInit {
       this.playlists = playlist;
       this.isLoadingPlaylists = false;
 
-      this.appData.getMusics().then((music) => {
-        this.musics = music;
-        this.isLoadingMusics = false;
-      });
+    //   this.appData.getMusics().then((music) => {
+    //     this.musics = music;
+    //     this.isLoadingMusics = false;
+    //   });
     });
 
     this.music = this.musicController.getOptions();
