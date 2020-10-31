@@ -11,10 +11,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/bookmarks/bookmarks.module').then(m => m.BookmarksPageModule)
   },
   {
-    path: 'auth',
-    loadChildren: () => import('./pages/auth/auth.module').then(m => m.AuthPageModule)
-  },
-  {
     path: 'message-detail',
     loadChildren: () => import('./pages/message-detail/message-detail.module').then(m => m.MessageDetailPageModule)
   }

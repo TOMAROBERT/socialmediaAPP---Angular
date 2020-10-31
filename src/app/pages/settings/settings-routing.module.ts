@@ -33,20 +33,8 @@ const routes: Routes = [
     loadChildren: () => import('./privacy/privacy.module').then( m => m.PrivacyPageModule)
   },
   {
-    path: 'blocked',
-    loadChildren: () => import('./blocked/blocked.module').then( m => m.BlockedPageModule)
-  },
-  {
-    path: 'balance',
-    loadChildren: () => import('./balance/balance.module').then( m => m.BalancePageModule)
-  },
-  {
     path: 'subscriptions',
     loadChildren: () => import('./subscriptions/subscriptions.module').then( m => m.SubscriptionsPageModule)
-  },
-  {
-    path: 'about',
-    loadChildren: () => import('./about/about.module').then( m => m.AboutPageModule)
   }
 ];
 
