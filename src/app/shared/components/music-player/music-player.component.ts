@@ -5,7 +5,7 @@ import {
   initialPlayerEventOptions,
   MusicController
 } from '../../../services/music-controller/music-controller.service';
-import { Subscription } from 'rxjs';
+// import { Subscription } from 'rxjs';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -23,7 +23,6 @@ export class MusicPlayerComponent implements OnInit, OnDestroy {
 
   music: PlayerEventOptions = initialPlayerEventOptions;
 
-  audioSubscription: Subscription = new Subscription;
   constructor(
     private config: Config,
     private modalCtrl: ModalController,
@@ -69,9 +68,8 @@ export class MusicPlayerComponent implements OnInit, OnDestroy {
     this.musicController.togglePlayer(this.music.isPlaying, this.progress.value);
   }
 
-  /**
-   * Toggle music repeat
-   * @param {boolean} repeat
+  /*** Toggle music repeat
+   ** @param {boolean} repeat
    */
   repeat(repeat: boolean) {
     this.musicController.progress.next({ repeat: !repeat });
@@ -91,17 +89,8 @@ export class MusicPlayerComponent implements OnInit, OnDestroy {
     this.isIos = this.config.get('mode') === 'ios';
     this.music = this.musicController.getOptions();
     this.updateMusicValue();
-
-    // Subscribe to music value
-    this.audioSubscription.add(
-      this.musicController.onProgress.subscribe((res) => {
-        this.music = { ...this.music, ...res };
-        this.updateMusicValue();
-      })
-    );
   }
 
   ngOnDestroy(): void {
-    this.audioSubscription.unsubscribe();
   }
 }

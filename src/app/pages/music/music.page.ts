@@ -23,15 +23,13 @@ export class MusicPage implements OnInit {
 
   music: PlayerEventOptions = initialPlayerEventOptions;
 
-  audioSubscription: SubscriptionLike[] = [];
   constructor(
     private appData: AppData,
     private musicController: MusicController,
     private fakerService: FakerService
   ) { }
 
-  /**
-  * On refresh
+  /*** On refresh
   */
   doRefresh(event) {
     this.appData.getPlaylists().then((playlist) => {
@@ -48,10 +46,8 @@ export class MusicPage implements OnInit {
     }, 400);
   }
 
-  /**
-  * Play music
-  *
-  * @param {Object} music - music data for play
+  /*** Play music
+  ** @param {Object} music - music data for play
   */
   playMusic(music) {
     this.playingSongId = music.id;
@@ -70,29 +66,26 @@ export class MusicPage implements OnInit {
     });
 
     this.music = this.musicController.getOptions();
-    this.audioSubscription.push(
-      this.activeSegment.valueChanges.subscribe((res) => {
+    // this.audioSubscription.push(
+    //   this.activeSegment.valueChanges.subscribe((res) => {
 
-        // cleare random image loaded value on tab change
-        this.playlists.forEach((element) => {
-          element.imgLoaded = false;
-        });
-        this.musics.forEach((element) => {
-          element.imgLoaded = false;
-        });
-      }),
+    //     // cleare random image loaded value on tab change
+    //     this.playlists.forEach((element) => {
+    //       element.imgLoaded = false;
+    //     });
+    //     this.musics.forEach((element) => {
+    //       element.imgLoaded = false;
+    //     });
+    //   }),
 
-      this.musicController.onProgress.subscribe((res) => {
-        this.music = { ...this.music, ...res };
-      })
-    );
+    //   this.musicController.onProgress.subscribe((res) => {
+    //     this.music = { ...this.music, ...res };
+    //   })
+    // );
   }
 
   ionViewDidEnter() { }
 
-  ngOnDestroy(): void {
-    this.audioSubscription.forEach(subscription => subscription.unsubscribe());
-    this.audioSubscription = [];
-  }
+  // ngOnDestroy(): void {}
 
 }

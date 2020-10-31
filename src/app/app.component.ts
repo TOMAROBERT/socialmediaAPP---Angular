@@ -11,7 +11,7 @@ import { Store, select } from '@ngrx/store';
 import { selectTheme } from './shared/ngrx/settings/settings.selectors';
 
 import { TranslateService } from '@ngx-translate/core';
-import { Observable, Subscription, SubscriptionLike } from 'rxjs';
+import { Observable, SubscriptionLike } from 'rxjs';
 import { actionSettingsChangeTheme } from './shared/ngrx/settings/settings.actions';
 import { FakerService } from './services/faker/faker.service';
 import { AppEventsService } from './services/app-events/app-events.service';
@@ -52,8 +52,6 @@ export class AppComponent implements OnInit {
     quality: 50
   };
 
-  private subscriptions: SubscriptionLike[] = [];
-  private orientationSubscription: Subscription;
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -75,9 +73,7 @@ export class AppComponent implements OnInit {
     this.initializeApp();
   }
 
-  /**
-  * App init
-  */
+  /** * App init */
   initializeApp() {
     this.translate.setDefaultLang('ru');
     this.fakerService.setLang('ru');
@@ -90,16 +86,13 @@ export class AppComponent implements OnInit {
     });
   }
 
-  /**
-  * Theme toggle
-  */
+  /*** Theme toggle */
   async toggleDarkTheme() {
     const isDark = await this.store.pipe(select(selectTheme), take(1)).toPromise();
     this.store.dispatch(actionSettingsChangeTheme({ isDark: !isDark }));
   }
 
-  /**
-  * Navigate to settings page
+  /*** Navigate to settings page
   */
   async goToSettings() {
     const loading = await this.loadingController.create();
@@ -142,22 +135,6 @@ export class AppComponent implements OnInit {
     /**
      * Subscribe to orientation change
      */
-    this.orientationSubscription = this.screenOrientation.onChange().subscribe(async () => {
-      await this.cameraPreview.stopCamera();
-      this.cameraPreviewOpts = { ...this.cameraPreviewOpts, width: window.screen.width, height: window.screen.height };
-
-      this.cameraPreview.startCamera(this.cameraPreviewOpts).then(async (res) => {
-        await this.cameraPreview.setFlashMode(
-            this.isCameraFlashMode
-                ? this.cameraPreview.FLASH_MODE.ON
-                : this.cameraPreview.FLASH_MODE.OFF
-        );
-        console.log(res);
-      },
-        (err) => {
-          console.log(err);
-        });
-    });
   }
 
   /**
@@ -166,7 +143,6 @@ export class AppComponent implements OnInit {
   onCloseCameraMenu(event) {
     this.isCameraStart = false;
     this.cameraPreview.stopCamera();
-    this.orientationSubscription.unsubscribe();
     this.statusBar.show();
   }
 

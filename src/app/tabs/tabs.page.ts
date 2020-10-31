@@ -1,6 +1,6 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import { MenuController, ModalController, AnimationController } from '@ionic/angular';
-import { SubscriptionLike } from 'rxjs';
+// import { SubscriptionLike } from 'rxjs';
 // import { MusicModalEnterAnimation, MusicModalLeaveAnimation } from '../app.animations';
 
 import { Howl } from 'howler';
@@ -28,7 +28,6 @@ export class TabsPage implements OnInit, OnDestroy {
   progress = 0;
   music: PlayerEventOptions = initialPlayerEventOptions;
 
-  private subscriptions: SubscriptionLike[] = [];
   constructor(
     private appEvents: AppEventsService,
     private menu: MenuController,
@@ -92,17 +91,8 @@ export class TabsPage implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    // Subscribe to music events
-    this.subscriptions.push(
-      this.musicController.onProgress.subscribe((res) => {
-        this.music = { ...this.music, ...res };
-        this.progress = +(this.music.seek / this.music.duration);
-      })
-    );
   }
 
   ngOnDestroy(): void {
-    this.subscriptions.forEach(subscription => subscription.unsubscribe());
-    this.subscriptions = [];
   }
 }

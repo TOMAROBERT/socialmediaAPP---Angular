@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SubscriptionLike } from 'rxjs';
+// import { SubscriptionLike } from 'rxjs';
 import { Config, MenuController, ModalController } from '@ionic/angular';
 
 
@@ -35,7 +35,6 @@ export class NewsPage implements OnInit {
 
   isIos: boolean;
 
-  private subscriptions: SubscriptionLike[] = [];
   constructor(
     private config: Config,
     private menu: MenuController,
@@ -140,22 +139,9 @@ export class NewsPage implements OnInit {
 
   ionViewDidEnter() {
     this.menu.enable(true, 'camera');
-    this.subscriptions.push(
-      this.activeSegment.valueChanges.subscribe((res) => {
-        this.router.navigate([], {
-          queryParams: {
-            tab: res
-          },
-          queryParamsHandling: 'merge',
-        });
-      })
-    );
   }
 
   ionViewDidLeave() {
     this.menu.enable(false, 'camera');
-
-    this.subscriptions.forEach(subscription => subscription.unsubscribe());
-    this.subscriptions = [];
   }
 }

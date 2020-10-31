@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import { MenuController } from '@ionic/angular';
-import { SubscriptionLike } from 'rxjs';
 import { AppEventsService } from '../../services/app-events/app-events.service';
 import { FakerService } from '../../services/faker/faker.service';
 
@@ -19,7 +18,6 @@ export class ProfilePage implements OnInit {
     isMobileOnline: true
   };
 
-  private subscriptions: SubscriptionLike[] = [];
   constructor(
     private appEvents: AppEventsService,
     private menu: MenuController,
@@ -50,15 +48,6 @@ export class ProfilePage implements OnInit {
   }
   ngOnInit(): void {
     this.getUser();
-
-    // Subscribe to tab click event
-    this.subscriptions.push(
-      this.appEvents.onTabClicks.subscribe((tab => {
-        if (tab.id === 'profile') {
-          this.menu.toggle('profile');
-        }
-      }))
-    );
   }
 
   ionViewDidEnter() {
@@ -67,8 +56,5 @@ export class ProfilePage implements OnInit {
 
   ionViewDidLeave() {
     this.menu.enable(false, 'profile');
-
-    this.subscriptions.forEach(subscription => subscription.unsubscribe());
-    this.subscriptions = [];
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Howl } from 'howler';
-import { interval, SubscriptionLike, Subject, Observable } from 'rxjs';
+import { interval, Subject, Observable } from 'rxjs';
 import { Config } from '@ionic/angular';
 import { tap } from 'rxjs/operators';
 
@@ -52,13 +52,11 @@ export class MusicController {
     this.options = { ...this.options, ...options };
   }));
 
-  private playerSubscriptions: SubscriptionLike[] = [];
   constructor(
     private config: Config
   ) { }
 
-  /**
-  * Play music function
+  /*** Play music function
   */
   public playMusic(configuration: PlayerConfiguration) {
     if (this.player) {
@@ -101,17 +99,17 @@ export class MusicController {
         });
 
         // subscribe to music playing events
-        this.playerSubscriptions.push(
-          this.playerCheckInterval.subscribe(() => {
-            // if not playing stop sending event
-            if (!this.options.isPlaying) {
-              return;
-            }
+        // this.playerSubscriptions.push(
+        //   this.playerCheckInterval.subscribe(() => {
+        //     // if not playing stop sending event
+        //     if (!this.options.isPlaying) {
+        //       return;
+        //     }
 
-            // send music position
-            this.progress.next({ seek: +this.player.seek() });
-          })
-        );
+        //     // send music position
+        //     this.progress.next({ seek: +this.player.seek() });
+        //   })
+        // );
       },
       onend: () => {
         // if music repeat active, then play repeat
@@ -128,10 +126,9 @@ export class MusicController {
     this.player.play();
   }
 
-  /**
-  * Toggle player function
-  * @param {boolean} pause
-  * @param {number} seek - music position
+  /*** Toggle player function
+  ** @param {boolean} pause
+  ** @param {number} seek - music position
   */
   public togglePlayer(pause: boolean, seek: number) {
     if (pause) {
@@ -144,32 +141,28 @@ export class MusicController {
     }
   }
 
-  /**
-  * Music seek function
-  * @param {number} seek - music position
+  /*** Music seek function
+  ** @param {number} seek - music position
   */
   public seek(seek: number) {
     this.player.seek(this.player.duration() * (seek / 100));
   }
 
-  /**
-  * Music value function
-  * @param {number} value - music valume
+  /*** Music value function
+  ** @param {number} value - music valume
   */
   public volume(volume: number) {
     this.player.volume(volume);
     this.progress.next({ volume: this.player.volume() });
   }
 
-  /**
-  * Get player options (data)
+  /*** Get player options (data)
   */
   public getOptions(): PlayerEventOptions {
     return this.options;
   }
 
-  /**
-  * Music abort
+  /*** Music abort
   */
   public abort() {
     this.player.unload();
@@ -179,11 +172,10 @@ export class MusicController {
     this.unsubscribePlayerEvents();
   }
 
-  /**
-  * Seconds to time function
+  /*** Seconds to time function
   * for music player modal
   *
-  * @param {number} seconds
+  ** @param {number} seconds
   */
   public secondsToTime(seconds: number) {
     const h = Math.floor(seconds / 3600);
@@ -203,13 +195,11 @@ export class MusicController {
   }
 
   public unsubscribePlayerEvents() {
-    this.playerSubscriptions.forEach(subscription => subscription.unsubscribe());
-    this.playerSubscriptions = [];
   }
 
-  ngOnInit(): void { }
+  // ngOnInit(): void { }
 
-  ngOnDestroy(): void {
-    this.unsubscribePlayerEvents();
-  }
+  // ngOnDestroy(): void {
+  //   this.unsubscribePlayerEvents();
+  // }
 }
