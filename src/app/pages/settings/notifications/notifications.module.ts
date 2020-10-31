@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { NotificationsPageRoutingModule } from './notifications-routing.module';
-import { SharedModule } from '../../../shared/shared.module';
 
 import { NotificationsPage } from './notifications.page';
 
@@ -12,15 +11,6 @@ import { CommunityMessagesComponent } from './messages/community-messages/commun
 
 import { CommunitiesNotificationsComponent } from './sources/communities-notifications/communities-notifications.component';
 
-import { LikesComponent } from './feedback/likes/likes.component';
-import { SharedComponent } from './feedback/shared/shared.component';
-import { CommentsComponent } from './feedback/comments/comments.component';
-import { AlsoCommentedComponent } from './feedback/also-commented/also-commented.component';
-import { MentionsComponent } from './feedback/mentions/mentions.component';
-import { MentionsMessagesComponent } from './feedback/mentions-messages/mentions-messages.component';
-import { PostsComponent } from './feedback/posts/posts.component';
-import { RelatedYouComponent } from './feedback/related-you/related-you.component';
-import { ParticipationPollsComponent } from './feedback/participation-polls/participation-polls.component';
 
 import { NewPostComponent } from './other/new-post/new-post.component';
 import { ClosedCommunityPostsComponent } from './other/closed-community-posts/closed-community-posts.component';
@@ -37,8 +27,6 @@ import { StoreComponent } from './other/store/store.component';
   imports: [
     CommonModule,
     NotificationsPageRoutingModule,
-
-    SharedModule,
   ],
   declarations: [
     NotificationsPage,
@@ -49,15 +37,6 @@ import { StoreComponent } from './other/store/store.component';
 
     CommunitiesNotificationsComponent,
 
-    LikesComponent,
-    SharedComponent,
-    CommentsComponent,
-    AlsoCommentedComponent,
-    MentionsComponent,
-    MentionsMessagesComponent,
-    PostsComponent,
-    RelatedYouComponent,
-    ParticipationPollsComponent,
     NewPostComponent,
     ClosedCommunityPostsComponent,
     GiftsComponent,

@@ -8,16 +8,6 @@ import { CommunityMessagesComponent } from './messages/community-messages/commun
 
 import { CommunitiesNotificationsComponent } from './sources/communities-notifications/communities-notifications.component';
 
-import { LikesComponent } from './feedback/likes/likes.component';
-import { SharedComponent } from './feedback/shared/shared.component';
-import { CommentsComponent } from './feedback/comments/comments.component';
-import { AlsoCommentedComponent } from './feedback/also-commented/also-commented.component';
-import { MentionsComponent } from './feedback/mentions/mentions.component';
-import { MentionsMessagesComponent } from './feedback/mentions-messages/mentions-messages.component';
-import { PostsComponent } from './feedback/posts/posts.component';
-import { RelatedYouComponent } from './feedback/related-you/related-you.component';
-import { ParticipationPollsComponent } from './feedback/participation-polls/participation-polls.component';
-
 import { NewPostComponent } from './other/new-post/new-post.component';
 import { ClosedCommunityPostsComponent } from './other/closed-community-posts/closed-community-posts.component';
 import { GiftsComponent } from './other/gifts/gifts.component';
@@ -38,16 +28,6 @@ const pagesDeclarations = [
 
   CommunitiesNotificationsComponent,
 
-  LikesComponent,
-  SharedComponent,
-  CommentsComponent,
-  AlsoCommentedComponent,
-  MentionsComponent,
-  MentionsMessagesComponent,
-  PostsComponent,
-  RelatedYouComponent,
-  ParticipationPollsComponent,
-
   NewPostComponent,
   ClosedCommunityPostsComponent,
   GiftsComponent,
@@ -67,17 +47,6 @@ const routes: Routes = [
   { path: 'community-messages', component: CommunityMessagesComponent },
 
   { path: 'communities-notifications', component: CommunitiesNotificationsComponent },
-
-  { path: 'likes', component: LikesComponent },
-  { path: 'shared', component: SharedComponent },
-  { path: 'comments', component: CommentsComponent },
-  { path: 'also-commented', component: AlsoCommentedComponent },
-  { path: 'mentions', component: MentionsComponent },
-  { path: 'mentions-messages', component: MentionsMessagesComponent },
-  { path: 'posts', component: PostsComponent },
-  { path: 'related-you', component: RelatedYouComponent },
-  { path: 'participation-polls', component: ParticipationPollsComponent },
-
 
   { path: 'new-post', component: NewPostComponent },
   { path: 'closed-community-posts', component: ClosedCommunityPostsComponent },

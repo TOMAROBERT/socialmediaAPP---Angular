@@ -24,15 +24,7 @@ export class NotificationsPage implements OnInit {
     {
       id: 'feedback',
       pages: [
-        { id: 'likes', icon: 'heart', color: 'danger', link: 'likes' },
         { id: 'shared', icon: 'arrow-redo', color: 'success', link: 'shared' },
-        { id: 'comments', icon: 'chatbox', color: 'success', link: 'comments' },
-        { id: 'also_commented', icon: 'communities_notifications', color: 'primary', link: 'also-commented' },
-        { id: 'mentions', icon: 'at', color: 'primary', link: 'mentions' },
-        { id: 'mentions_messages', icon: 'chatbubble', color: 'success', link: 'mentions-messages' },
-        { id: 'posts', icon: 'pencil', color: 'primary', link: 'posts' },
-        { id: 'related_you', icon: 'compass', color: 'success', link: 'related-you' },
-        { id: 'participation_polls', icon: 'stats-chart', color: 'success', link: 'participation-polls' }
       ]
     },
     {
