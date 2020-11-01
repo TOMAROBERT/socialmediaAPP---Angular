@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-// import { SubscriptionLike } from 'rxjs';
 import { Config, MenuController, ModalController } from '@ionic/angular';
 
 
@@ -17,22 +16,8 @@ export class NewsPage implements OnInit {
   posts: any[] = [];
   activeSegment: FormControl = new FormControl('news');
   segments: any[] = [
-    { title: 'News', value: 'news' },
-    { title: 'Discover', value: 'discover' }
+    { title: 'News', value: 'news' }
   ];
-
-  activeDiscover: FormControl = new FormControl('for_you');
-  discoverCategories: any[] = [
-    { id: 'for_you' },
-    { id: 'games' },
-    { id: 'sports' },
-    { id: 'it' },
-    { id: 'photos' },
-    { id: 'movies' },
-    { id: 'travel' }
-  ];
-  discavery = [];
-
   isIos: boolean;
 
   constructor(
@@ -78,55 +63,24 @@ export class NewsPage implements OnInit {
           shared: faker.random.number(100)
         };
       });
-
-      // generate discavery
-      const discaveryTypes = ['image', 'post-image', 'post-full'];
-      for (let index = 0; index < discaveryTypes.length; index++) {
-        this.discavery.push({
-          type: discaveryTypes[index],
-          data: []
-        });
-
-        if (discaveryTypes[index] === 'image') {
-          this.discavery[index].data = Array.apply(null, Array(2)).map(() => {
-            return {
-              id: faker.random.uuid(),
-              img: faker.random.arrayElement([faker.image.people(), faker.image.food()])
-            };
-          });
-        }
-
-        if (discaveryTypes[index] === 'post-image') {
-          this.discavery[index].data = Array.apply(null, Array(2)).map(() => {
-            return {
-              id: faker.random.uuid(),
-              avatar: faker.image.avatar(),
-              author: faker.company.companyName(),
-              img: faker.random.arrayElement([faker.image.technics(), faker.image.sports()])
-            };
-          });
-        }
-
-        if (discaveryTypes[index] === 'post-full') {
-          this.discavery[index].data = Array.apply(null, Array(4)).map(() => {
-            return {
-              id: faker.random.uuid(),
-              avatar: faker.image.avatar(),
-              author: faker.company.companyName(),
-              img: faker.random.arrayElement([faker.image.transport(), faker.image.city(), faker.image.nightlife(), faker.image.image()]),
-              text: faker.lorem.sentences(2)
-            };
-          });
-        }
-      }
     });
 
     // this.posts = await this.appData.getPosts();
-    // this.discavery = await this.appData.getDiscavery();
   }
 
   ngOnInit(): void {
     this.isIos = this.config.get('mode') === 'ios';
     this.dataInit();
   }
+
+  likesColor() {
+    console.log('am apasat pe like');
+  }
+  comColor() {
+    console.log('am apasat pe comm');
+  }
+  shareColor() {
+    console.log('am apasat pe share');
+  }
+  
 }

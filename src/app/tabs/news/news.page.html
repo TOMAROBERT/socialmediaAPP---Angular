@@ -12,15 +12,6 @@
       </ion-segment-button>
     </ion-segment>
   </ion-toolbar>
-
-  <ion-toolbar *ngIf="activeSegment.value === 'discover'">
-    <div scrollX="true">
-      <ion-chip class="scrollX" *ngFor="let dis of discoverCategories"
-        [color]="activeDiscover.value === dis.id ? 'primary' : 'medium'">
-        <ion-label>{{'discover_categories.' + dis.id | translate}}</ion-label>
-      </ion-chip>
-    </div>
-  </ion-toolbar>
 </ion-header>
 
 <ion-content>
@@ -71,16 +62,16 @@
 
         <ion-item lines="none" class="ion-no-padding" style="margin-left: 10px;">
           <ion-buttons slot="start">
-            <ion-button color="medium">
-              <ion-icon slot="start" name="heart-outline"></ion-icon>
+            <ion-button color="medium" (click)="likesColor()">
+              <ion-icon slot="start" name="heart-outline" color="danger"></ion-icon>
               <small>{{post.likes}}</small>
             </ion-button>
-            <ion-button color="medium">
-              <ion-icon slot="start" name="chatbox-outline"></ion-icon>
+            <ion-button color="medium" (click)="comColor()">
+              <ion-icon slot="start" name="chatbox-outline" color="dark"></ion-icon>
               <small>{{post.comments}}</small>
             </ion-button>
-            <ion-button color="medium">
-              <ion-icon slot="start" name="return-up-forward-outline"></ion-icon>
+            <ion-button color="medium" (click)="shareColor()">
+              <ion-icon slot="start" name="return-up-forward-outline" color="dark"></ion-icon>
               <small>{{post.shared}}</small>
             </ion-button>
           </ion-buttons>
@@ -94,105 +85,5 @@
         </ion-item>
       </ion-card>
     </ng-container>
-  </div>
-
-  <!-- Discover tab -->
-  <div *ngIf="activeSegment.value === 'discover'">
-    <ion-grid>
-      <ion-row>
-        <ng-container *ngFor="let dis of discavery">
-
-          <ng-container *ngIf="dis.type === 'image'">
-            <ion-col size="6" *ngFor="let i of dis.data">
-              <ion-card class="image-card">
-                <img [src]="i.img" />
-
-                <ion-buttons>
-                  <ion-button class="button">
-                    <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
-                  </ion-button>
-                </ion-buttons>
-              </ion-card>
-            </ion-col>
-          </ng-container>
-
-          <ng-container *ngIf="dis.type === 'post-image'">
-            <ion-col size="12" *ngFor="let i of dis.data">
-              <ion-card class="post-image ion-no-margin">
-                <ion-item lines="none">
-                  <ion-avatar slot="start">
-                    <img [src]="i.avatar">
-                  </ion-avatar>
-                  <ion-label>
-                    <small>{{i.author}}</small>
-                  </ion-label>
-                </ion-item>
-
-                <img [src]="i.img" />
-
-                <ion-item lines="none" class="no-padding-item">
-                  <ion-buttons slot="start">
-                    <ion-button color="medium">
-                      <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
-                    </ion-button>
-                    <ion-button color="medium">
-                      <ion-icon slot="icon-only" name="return-up-forward-outline"></ion-icon>
-                    </ion-button>
-                  </ion-buttons>
-
-                  <ion-buttons slot="end">
-                    <ion-button color="medium">
-                      <ion-icon slot="icon-only" md="ellipsis-vertical-outline" ios="ellipsis-horizontal-outline">
-                      </ion-icon>
-                    </ion-button>
-                  </ion-buttons>
-                </ion-item>
-              </ion-card>
-            </ion-col>
-          </ng-container>
-
-
-          <ng-container *ngIf="dis.type === 'post-full'">
-            <ion-col size="12" *ngFor="let i of dis.data">
-              <ion-card class="post-full ion-no-margin">
-                <ion-item lines="none">
-                  <ion-avatar slot="start" style="width: 32px;height: 32px;">
-                    <img [src]="i.avatar">
-                  </ion-avatar>
-                  <ion-label>
-                    <small>{{i.author}}</small>
-                  </ion-label>
-                </ion-item>
-
-                <img [src]="i.img" />
-
-                <ion-card-content>
-                  {{i.text}}
-                </ion-card-content>
-
-                <ion-item lines="none" class="no-padding-item">
-                  <ion-buttons slot="start">
-                    <ion-button color="medium">
-                      <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
-                    </ion-button>
-                    <ion-button color="medium">
-                      <ion-icon slot="icon-only" name="return-up-forward-outline"></ion-icon>
-                    </ion-button>
-                  </ion-buttons>
-
-                  <ion-buttons slot="end">
-                    <ion-button color="medium">
-                      <ion-icon slot="icon-only" md="ellipsis-vertical-outline" ios="ellipsis-horizontal-outline">
-                      </ion-icon>
-                    </ion-button>
-                  </ion-buttons>
-                </ion-item>
-
-              </ion-card>
-            </ion-col>
-          </ng-container>
-        </ng-container>
-      </ion-row>
-    </ion-grid>
   </div>
 </ion-content>
