@@ -10,16 +10,7 @@
       <ion-segment-button value="news">
         {{'news_title' | translate}}
       </ion-segment-button>
-      <ion-segment-button value="discover">
-        {{'discover_title' | translate}}
-      </ion-segment-button>
     </ion-segment>
-
-    <ion-buttons slot="end">
-      <ion-button [routerLink]="[ '/tabs', 'news', 'settings' ]" routerDirection="forward">
-        <ion-icon slot="icon-only" name="scan-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
   </ion-toolbar>
 
   <ion-toolbar *ngIf="activeSegment.value === 'discover'">
@@ -47,9 +38,6 @@
           <span class="post-some-title">{{'whats_new' | translate}}</span>
         </ion-button>
         <ion-buttons slot="end">
-          <ion-button color="medium">
-            <ion-icon slot="icon-only" name="image-outline"></ion-icon>
-          </ion-button>
           <ion-button color="medium">
             <ion-icon slot="icon-only" name="disc-outline"></ion-icon>
           </ion-button>
