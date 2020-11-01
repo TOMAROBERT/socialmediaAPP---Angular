@@ -16,9 +16,7 @@ import { AppEventsService } from '../services/app-events/app-events.service';
 export class TabsPage implements OnInit, OnDestroy {
   tabs: any[] = [
     { id: 'news', badge: 0, icon: 'reader-outline' },
-    { id: 'explore', badge: 0, icon: 'compass-outline' },
-    { id: 'messages', badge: 0, icon: 'chatbubble-outline' },
-    { id: 'profile', badge: 0, icon: 'person-circle-outline' }
+    { id: 'messages', badge: 0, icon: 'chatbubble-outline' }
   ];
   activeTab = '';
 

@@ -17,24 +17,6 @@ const routes: Routes = [
           }
         ]
       },
-      // Tab 2
-      {
-        path: 'explore',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('./explore/explore.module').then(m => m.ExplorePageModule)
-          },
-          // {
-          //   path: 'music',
-          //   loadChildren: () => import('../pages/music/music.module').then(m => m.MusicPageModule)
-          // },
-          {
-            path: 'friends',
-            loadChildren: () => import('../pages/friends/friends.module').then(m => m.FriendsPageModule)
-          }
-        ]
-      },
       // Tab 3
       {
         path: 'messages',
@@ -42,16 +24,6 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () => import('./message/message.module').then(m => m.MessagePageModule)
-          }
-        ]
-      },
-      // Tab 5
-      {
-        path: 'profile',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('./profile/profile.module').then(m => m.ProfilePageModule)
           }
         ]
       },
