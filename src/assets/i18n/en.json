@@ -8,7 +8,6 @@
     "discover_title": "Discover",
     "back_title": "Back",
     "messages_title": "Messages",
-    "messages_search_title": "Search",
     "explore_title": "Explore",
     "notification_feedback_title": "Feedback",
     "settings_title": "Settings",
@@ -41,21 +40,11 @@
         "profile": "Who can view the main information on my profile",
         "photos_with": "Who can view photos of me",
         "photos_saved": "Who can view the album",
-        "groups": "Who can view my list of groups",
         "places": "Who can view my photos location",
         "friends": "Who is visible in my list of friends and followed users",
         "hidden_friends": "Who can view my hidden friends",
-        "wall_send": "Who can post to my wall",
-        "photos_tagme": "Who can tag me in photos",
         "calls": "Who can call me",
-        "appscall": "Who can invite me to open apps",
-        "groups_invite": "Who can invite me to communities",
         "apps_invite": "Who can invite me to use apps",
-        "friends_requests": "Which friend requests I am notified of",
-        "chat_invite_user": "Who can invite me to chats",
-        "search_by_reg_phone": "Who can find me by contacts import by phone number",
-        "search": "Who can see my profile on the internet",
-        "updates": "Which of my updates appear in my friends' news feeds",
-        "company_messages": "Which companies can send me messages using my phone number"
+        "friends_requests": "Which friend requests I am notified of"
     }
 }
