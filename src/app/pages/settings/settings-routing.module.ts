@@ -9,10 +9,6 @@ const routes: Routes = [
     component: SettingsPage
   },
   {
-    path: 'notifications',
-    loadChildren: () => import('./notifications/notifications.module').then( m => m.NotificationsPageModule)
-  },
-  {
     path: 'privacy',
     loadChildren: () => import('./privacy/privacy.module').then( m => m.PrivacyPageModule)
   }

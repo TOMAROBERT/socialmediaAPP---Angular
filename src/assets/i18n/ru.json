@@ -1,11 +1,8 @@
 {
     "friends_title": "Friends",
-    "communities_title": "Communities",
     "stickers_title": "Stickers",
     "videos_title": "Videos",
-    "live_streams_title": "Live Streams",
     "shopping_title": "Shopping",
-    "podcasts_title": "Podcasts",
     "news_title": "Новости",
     "discover_title": "Интересное",
     "back_title": "Назад",
@@ -14,8 +11,6 @@
     "explore_title": "Обзор",
     "notification_feedback_title": "Уведомления",
     "settings_title": "Настройки",
-    "notifications_title": "Уведомления",
-    "sources_of_notifications": "Источники",
     "profile_title": "Профиль",
     "feedback": "Обратная связь",
     "events": "События",
@@ -35,26 +30,16 @@
         "travel": "Туризм"
     },
     "settings_notifications": {
-        "communities_notifications": "Управления от сообществ",
         "friend_requests": "Заявки в друзья",
         "community_invitations": "Приглашения в сообщества",
         "photo_tags": "Отметки в фотографиях",
-        "new_post": "Новые записи",
-        "gifts": "Подарки",
-        "aplications": "Приложения",
-        "live_streams": "Трансляции",
-        "podcasts": "Подкасты",
-        "achievements": "Достижения",
-        "services": "Сервисы",
-        "bookmarks": "Закладки",
-        "store": "Магазин"
+        "new_post": "Новые записи"
     },
     "settings_privacy": {
         "profile": "Who can view the main information on my profile",
         "photos_with": "Who can view photos of me",
         "photos_saved": "Who can view the album",
         "groups": "Who can view my list of groups",
-        "gifts": "Who can view my gifts",
         "places": "Who can view my photos location",
         "friends": "Who is visible in my list of friends and followed users",
         "hidden_friends": "Who can view my hidden friends",

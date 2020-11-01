@@ -18,7 +18,6 @@ export class TabsPage implements OnInit, OnDestroy {
     { id: 'news', badge: 0, icon: 'reader-outline' },
     { id: 'explore', badge: 0, icon: 'compass-outline' },
     { id: 'messages', badge: 0, icon: 'chatbubble-outline' },
-    { id: 'notifications', badge: 0, icon: 'notifications-outline' },
     { id: 'profile', badge: 0, icon: 'person-circle-outline' }
   ];
   activeTab = '';

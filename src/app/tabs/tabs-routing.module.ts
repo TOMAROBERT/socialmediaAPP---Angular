@@ -49,16 +49,6 @@ const routes: Routes = [
           }
         ]
       },
-      // Tab 4
-      {
-        path: 'notifications',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('./notification/notification.module').then(m => m.NotificationPageModule)
-          }
-        ]
-      },
       // Tab 5
       {
         path: 'profile',
