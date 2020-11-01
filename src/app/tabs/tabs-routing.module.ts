@@ -14,10 +14,6 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () => import('./news/news.module').then(m => m.NewsPageModule)
-          },
-          {
-            path: 'settings',
-            loadChildren: () => import('../pages/settings/settings.module').then(m => m.SettingsPageModule)
           }
         ]
       },
@@ -56,10 +52,6 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () => import('./profile/profile.module').then(m => m.ProfilePageModule)
-          },
-          {
-            path: 'settings',
-            loadChildren: () => import('../pages/settings/settings.module').then(m => m.SettingsPageModule)
           }
         ]
       },
