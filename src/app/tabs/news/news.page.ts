@@ -63,13 +63,6 @@ export class NewsPage implements OnInit {
     }, 1000);
   }
 
-  /**
-   * Toggle camera side
-   */
-  toggleMenu() {
-    this.menu.toggle('camera');
-  }
-
   async dataInit() {
     this.faker.getFaker().then((faker) => {
       // generate posts
@@ -135,13 +128,5 @@ export class NewsPage implements OnInit {
   ngOnInit(): void {
     this.isIos = this.config.get('mode') === 'ios';
     this.dataInit();
-  }
-
-  ionViewDidEnter() {
-    this.menu.enable(true, 'camera');
-  }
-
-  ionViewDidLeave() {
-    this.menu.enable(false, 'camera');
   }
 }

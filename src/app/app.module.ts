@@ -7,7 +7,6 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { CameraPreview } from '@ionic-native/camera-preview/ngx';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -54,7 +53,6 @@ import { SharedModule } from './shared/shared.module';
   providers: [
     StatusBar,
     SplashScreen,
-    CameraPreview,
     ScreenOrientation,
 
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
