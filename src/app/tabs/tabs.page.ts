@@ -5,7 +5,6 @@ import { MenuController, ModalController, AnimationController } from '@ionic/ang
 
 import { Howl } from 'howler';
 import { MusicController, PlayerEventOptions, initialPlayerEventOptions } from '../services/music-controller/music-controller.service';
-import { MusicPlayerComponent } from '../shared/components/music-player/music-player.component';
 import { AppEventsService } from '../services/app-events/app-events.service';
 
 @Component({
@@ -73,18 +72,18 @@ export class TabsPage implements OnInit, OnDestroy {
     event.stopPropagation();
     event.preventDefault();
 
-    const modal = await this.modalController.create({
-      component: MusicPlayerComponent,
-      cssClass: 'music-modal',
-      swipeToClose: true,
-      componentProps: {
-        music: this.music
-      },
-      // enterAnimation: MusicModalEnterAnimation,
-      // leaveAnimation: MusicModalLeaveAnimation,
-      // presentingElement: this.routerOutlet.nativeEl
-    });
-    return await modal.present();
+    // const modal = await this.modalController.create({
+    //   component: MusicPlayerComponentt,
+    //   cssClass: 'music-modal',
+    //   swipeToClose: true,
+    //   componentProps: {
+    //     music: this.music
+    //   },
+    //   // enterAnimation: MusicModalEnterAnimation,
+    //   // leaveAnimation: MusicModalLeaveAnimation,
+    //   // presentingElement: this.routerOutlet.nativeEl
+    // });
+    // return await modal.present();
   }
 
   ngOnInit(): void {

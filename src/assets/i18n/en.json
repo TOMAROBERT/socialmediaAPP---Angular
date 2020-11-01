@@ -1,6 +1,5 @@
 {
     "recommended": "Recommended",
-    "friends_title": "Friends",
     "stickers_title": "Stickers",
     "videos_title": "Videos",
     "shopping_title": "Shopping",
@@ -36,10 +35,7 @@
     "settings_privacy": {
         "profile": "Who can view the main information on my profile",
         "places": "Who can view my photos location",
-        "friends": "Who is visible in my list of friends and followed users",
-        "hidden_friends": "Who can view my hidden friends",
         "calls": "Who can call me",
-        "apps_invite": "Who can invite me to use apps",
-        "friends_requests": "Which friend requests I am notified of"
+        "apps_invite": "Who can invite me to use apps"
     }
 }
