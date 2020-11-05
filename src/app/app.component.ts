@@ -23,7 +23,6 @@ import { map, take } from 'rxjs/operators';
 })
 export class AppComponent implements OnInit {
   theme$: Observable<boolean>;
-  
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,

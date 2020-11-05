@@ -34,18 +34,18 @@ export class AppData {
         });
     }
 
-    async getDiscavery() {
-        return this.load().then((data) => {
-            return data.discavery;
-        });
-    }
+    // async getDiscavery() {
+    //     return this.load().then((data) => {
+    //         return data.discavery;
+    //     });
+    // }
 
 
-    async getPlaylists() {
-        return this.load().then((data) => {
-            return data.playlists;
-        });
-    }
+    // async getPlaylists() {
+    //     return this.load().then((data) => {
+    //         return data.playlists;
+    //     });
+    // }
 
     async getMessagesUser(id: number) {
         this.load().then((data) => {

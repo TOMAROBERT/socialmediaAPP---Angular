@@ -33,20 +33,6 @@ export class TabsPage implements OnInit, OnDestroy {
   ) { }
 
   /**
-   * Toggle music play/pause
-   */
-  toggleMusic() {
-    this.musicController.togglePlayer(this.music.isPlaying, (this.music.seek / this.music.duration) * 100);
-  }
-
-  /**
-   * Close music player
-   */
-  closePlayer() {
-    this.musicController.abort();
-  }
-
-  /**
    * On tab change
    * check tab if profile tab or not
    */
@@ -54,37 +40,17 @@ export class TabsPage implements OnInit, OnDestroy {
     this.activeTab = event.tab;
   }
 
-  /**
-   * On tab click
-   * Send event, if user click tab second time or more
-   * @param {any} tab - tab object
-   */
+  // /**
+  //  * On tab click
+  //  * Send event, if user click tab second time or more
+  //  * @param {any} tab - tab object
+  //  */
   tabClicked(tab) {
     if (this.activeTab === tab.id) {
       this.appEvents.tabClicks.next(tab);
     }
   }
 
-  /**
-   * Open music modal
-   */
-  async openMusicModal(event: Event) {
-    event.stopPropagation();
-    event.preventDefault();
-
-    // const modal = await this.modalController.create({
-    //   component: MusicPlayerComponentt,
-    //   cssClass: 'music-modal',
-    //   swipeToClose: true,
-    //   componentProps: {
-    //     music: this.music
-    //   },
-    //   // enterAnimation: MusicModalEnterAnimation,
-    //   // leaveAnimation: MusicModalLeaveAnimation,
-    //   // presentingElement: this.routerOutlet.nativeEl
-    // });
-    // return await modal.present();
-  }
 
   ngOnInit(): void {
   }

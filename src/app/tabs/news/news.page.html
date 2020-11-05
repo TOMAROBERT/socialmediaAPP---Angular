@@ -1,13 +1,7 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button (click)="0">
-        <ion-icon slot="icon-only" name="camera-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-
     <ion-segment [formControl]="activeSegment">
-      <ion-segment-button value="news">
+      <ion-segment-button value="news"> 
         {{'Welcome !'}}
       </ion-segment-button>
     </ion-segment>
@@ -63,15 +57,15 @@
         <ion-item lines="none" class="ion-no-padding" style="margin-left: 10px;">
           <ion-buttons slot="start">
             <ion-button color="medium" (click)="likesColor()">
-              <ion-icon slot="start" name="heart-outline" color="danger"></ion-icon>
+              <ion-icon slot="start" name="heart-outline" [ngStyle]="{'color': '#c70a0a'}"></ion-icon>
               <small>{{post.likes}}</small>
             </ion-button>
             <ion-button color="medium" (click)="comColor()">
-              <ion-icon slot="start" name="chatbox-outline" color="dark"></ion-icon>
+              <ion-icon slot="start" name="chatbox-outline" [ngStyle]="{'color': '#000'}"></ion-icon>
               <small>{{post.comments}}</small>
             </ion-button>
             <ion-button color="medium" (click)="shareColor()">
-              <ion-icon slot="start" name="return-up-forward-outline" color="dark"></ion-icon>
+              <ion-icon slot="start" name="return-up-forward-outline" [ngStyle]="{'color': '#4023fa'}"></ion-icon>
               <small>{{post.shared}}</small>
             </ion-button>
           </ion-buttons>

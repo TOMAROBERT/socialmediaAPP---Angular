@@ -17,7 +17,7 @@ const routes: Routes = [
           }
         ]
       },
-      // Tab 3
+      // Tab 2
       {
         path: 'messages',
         children: [
@@ -26,11 +26,6 @@ const routes: Routes = [
             loadChildren: () => import('./message/message.module').then(m => m.MessagePageModule)
           }
         ]
-      },
-      {
-        path: '',
-        redirectTo: 'news',
-        pathMatch: 'full'
       }
     ]
   },

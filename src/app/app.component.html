@@ -1,38 +1,3 @@
-<ion-app [ngClass]="{'dark-theme': (theme$ | async)}">
-  <ion-menu side="end" type="push" menuId="profile" contentId="main" class="profile-menu" disabled>
-    <ion-header class="ion-no-border">
-      <ion-toolbar>
-        <ion-title>John Smith</ion-title>
-      </ion-toolbar>
-    </ion-header>
-
-    <ion-content>
-      <ion-list lines="none">
-        <ion-item button>
-          <ion-icon color="primary" slot="start" name="bookmarks-outline"></ion-icon>
-          <ion-label>Bookmarks</ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-content>
-
-    <ion-footer>
-      <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-button>
-            <ion-icon color="primary" slot="icon-only" size="large" name="cog-outline"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-
-        <ion-title>{{'settings_title' | translate}}</ion-title>
-
-        <ion-buttons slot="end">
-          <ion-button (click)="toggleDarkTheme()">
-            <ion-icon color="primary" slot="icon-only" name="moon-outline"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-footer>
-  </ion-menu>
-
+<ion-app>
   <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>

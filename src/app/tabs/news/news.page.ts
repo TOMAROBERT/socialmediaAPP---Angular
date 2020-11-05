@@ -7,6 +7,7 @@ import { Config, MenuController, ModalController } from '@ionic/angular';
 import { AppData } from '../../providers/app-data';
 import { FakerService } from '../../services/faker/faker.service';
 
+
 @Component({
   selector: 'app-news',
   templateUrl: 'news.page.html',

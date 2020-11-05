@@ -11,9 +11,9 @@ export class LocalStorageService {
 
   constructor() { }
 
-  /**
-  * Load localStorage
-  */
+  // /**
+  // * Load localStorage
+  // */
   static loadInitialState() {
     return Object.keys(localStorage).reduce((state: any, storageKey) => {
       if (storageKey.includes(APP_PREFIX)) {
@@ -45,45 +45,45 @@ export class LocalStorageService {
     }, {});
   }
 
-  /**
-  * Init localStorage for reducer
-  */
-  static initStateFromLocalStorage(
-    reducer: ActionReducer<AppState>
-  ): ActionReducer<AppState> {
-    return function(state, action) {
-      const newState = reducer(state, action);
-      if ([INIT.toString(), UPDATE.toString()].includes(action.type)) {
-        return { ...newState, ...LocalStorageService.loadInitialState() };
-      }
-      return newState;
-    };
-  }
+  // /**
+  // * Init localStorage for reducer
+  // */
+  // static initStateFromLocalStorage(
+  //   reducer: ActionReducer<AppState>
+  // ): ActionReducer<AppState> {
+  //   return function(state, action) {
+  //     const newState = reducer(state, action);
+  //     if ([INIT.toString(), UPDATE.toString()].includes(action.type)) {
+  //       return { ...newState, ...LocalStorageService.loadInitialState() };
+  //     }
+  //     return newState;
+  //   };
+  // }
 
-  /**
-  * Set item to localStorage
-  *
-  * @param {string} key - item key
-  * @param {any} value - key value
-  */
+  // /**
+  // * Set item to localStorage
+  // *
+  // * @param {string} key - item key
+  // * @param {any} value - key value
+  // */
   setItem(key: string, value: any) {
     localStorage.setItem(`${APP_PREFIX}${key}`, JSON.stringify(value));
   }
 
-  /**
-  * Get item from localStorage
-  *
-  * @param {string} key - item key
-  */
+  // /**
+  // * Get item from localStorage
+  // *
+  // * @param {string} key - item key
+  // */
   getItem(key: string) {
     return JSON.parse(localStorage.getItem(`${APP_PREFIX}${key}`));
   }
 
-  /**
-  * Remove from localStorage
-  *
-  * @param {string} key - item key
-  */
+  // /**
+  // * Remove from localStorage
+  // *
+  // * @param {string} key - item key
+  // */
   removeItem(key: string) {
     localStorage.removeItem(`${APP_PREFIX}${key}`);
   }

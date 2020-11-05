@@ -22,9 +22,9 @@ import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
-  declarations: [
+  declarations: [		
     AppComponent
-  ],
+   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -57,6 +57,9 @@ import { SharedModule } from './shared/shared.module';
 
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    
+  ]
 })
 export class AppModule { }
