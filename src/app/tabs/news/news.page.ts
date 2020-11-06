@@ -83,5 +83,4 @@ export class NewsPage implements OnInit {
   shareColor() {
     console.log('am apasat pe share');
   }
-  
 }

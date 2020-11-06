@@ -26,6 +26,15 @@ const routes: Routes = [
             loadChildren: () => import('./message/message.module').then(m => m.MessagePageModule)
           }
         ]
+      },
+      // Tab 3
+      {
+        path: 'explore',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('./explore/explore.module').then(m => m.ExplorePageModule)         }
+        ]
       }
     ]
   },
