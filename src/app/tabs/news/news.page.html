@@ -9,9 +9,9 @@
 </ion-header>
 
 <ion-content>
-  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+  <!-- <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content pullingIcon="arrow-down-outline"></ion-refresher-content>
-  </ion-refresher>
+  </ion-refresher> -->
 
   <!-- News tab -->
   <div *ngIf="activeSegment.value === 'news'">
@@ -67,13 +67,6 @@
             <ion-button color="medium" (click)="shareColor()">
               <ion-icon slot="start" name="return-up-forward-outline" [ngStyle]="{'color': '#4023fa'}"></ion-icon>
               <small>{{post.shared}}</small>
-            </ion-button>
-          </ion-buttons>
-
-          <ion-buttons slot="end">
-            <ion-button color="medium">
-              <ion-icon size="small" slot="start" name="eye-outline"></ion-icon>
-              <small>{{post.views}}</small>
             </ion-button>
           </ion-buttons>
         </ion-item>
