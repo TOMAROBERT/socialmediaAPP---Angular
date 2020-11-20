@@ -5,10 +5,7 @@ import { tap } from 'rxjs/operators';
 
 export interface AppDataInterface {
     posts: any[];
-    discavery: any[];
-    messages: any[];
     messagesUser: any[];
-    playlists: any[];
 }
 
 @Injectable({
@@ -33,19 +30,6 @@ export class AppData {
             return data.posts;
         });
     }
-
-    // async getDiscavery() {
-    //     return this.load().then((data) => {
-    //         return data.discavery;
-    //     });
-    // }
-
-
-    // async getPlaylists() {
-    //     return this.load().then((data) => {
-    //         return data.playlists;
-    //     });
-    // }
 
     async getMessagesUser(id: number) {
         this.load().then((data) => {

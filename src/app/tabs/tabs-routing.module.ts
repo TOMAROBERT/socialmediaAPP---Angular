@@ -35,7 +35,7 @@ const routes: Routes = [
             path: '',
             loadChildren: () => import('./explore/explore.module').then(m => m.ExplorePageModule)         }
         ]
-      }
+      },
     ]
   },
   {

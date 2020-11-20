@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-segment [formControl]="activeSegment">
       <ion-segment-button value="news"> 
-        {{'Welcome !'}}
+        Welcome !
       </ion-segment-button>
     </ion-segment>
   </ion-toolbar>
@@ -14,13 +14,13 @@
   </ion-refresher> -->
 
   <!-- News tab -->
-  <div *ngIf="activeSegment.value === 'news'">
+  <!-- <div *ngIf="activeSegment.value === 'news'"> -->
 
     <!-- Post card -->
     <ion-card class="post-card">
       <ion-item lines="none" class="post-item">
         <ion-button class="post-some" color="light">
-          <span class="post-some-title">{{"What's new?"}}</span>
+          <span class="post-some-title">What's new?</span>
         </ion-button>
         <ion-buttons slot="end">
           <ion-button color="medium">
@@ -33,15 +33,16 @@
 
 
     <!-- Users posts -->
-    <ng-container>
-      <ion-card class="post-list-card" *ngFor="let post of posts">
+    <ng-container *ngFor="let post of posts">
+      <ion-card class="post-list-card">
         <ion-item lines="none">
           <ion-avatar slot="start">
+            <!-- <ion-icon name="reader-outline"></ion-icon> -->
             <img [src]="post.image">
           </ion-avatar>
           <ion-label>
             {{post.first_name}} {{post.last_name}}
-            <p>two minutes ago</p>
+            <p>{{post.seen}} minutes ago</p>
           </ion-label>
           <ion-buttons slot="end">
             <ion-button color="medium">
@@ -69,8 +70,14 @@
               <small>{{post.shared}}</small>
             </ion-button>
           </ion-buttons>
+          <ion-buttons class="viewEyeCentered"slot="end">
+            <ion-button color="medium">
+              <ion-icon size="small" slot="start" name="eye-outline"></ion-icon>
+              <small>{{post.views}}</small>
+          </ion-button>
+          </ion-buttons>
         </ion-item>
       </ion-card>
     </ng-container>
-  </div>
+  <!-- </div> -->
 </ion-content>

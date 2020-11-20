@@ -6,7 +6,7 @@ import { Config, MenuController, ModalController } from '@ionic/angular';
 
 import { AppData } from '../../providers/app-data';
 import { FakerService } from '../../services/faker/faker.service';
-
+// import Post from './../../model/Post'
 
 @Component({
   selector: 'app-news',
@@ -14,6 +14,7 @@ import { FakerService } from '../../services/faker/faker.service';
   styleUrls: ['news.page.scss']
 })
 export class NewsPage implements OnInit {
+  // posts: Post[] = [];
   posts: any[] = [];
   activeSegment: FormControl = new FormControl('news');
   segments: any[] = [
@@ -53,8 +54,12 @@ export class NewsPage implements OnInit {
     this.faker.getFaker().then((faker) => {
       // generate posts
       this.posts = Array.apply(null, Array(15)).map(() => {
+        // new Post(
+        //   faker.random.uuid()
+        // )
         return {
           id: faker.random.uuid(),
+          seen : faker.random.number(60),
           first_name: faker.name.findName().split(' ')[0],
           last_name: faker.name.lastName(),
           image: faker.image.avatar(),
@@ -66,7 +71,7 @@ export class NewsPage implements OnInit {
       });
     });
 
-    // this.posts = await this.appData.getPosts();
+     this.posts = await this.appData.getPosts();
   }
 
   ngOnInit(): void {
