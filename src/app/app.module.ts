@@ -17,7 +17,7 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { reducers, metaReducers } from './shared/shared.state';
-import { SettingsEffects } from './shared/ngrx/settings/settings.effects';
+// import { SettingsEffects } from './shared/ngrx/settings/settings.effects';
 import { SharedModule } from './shared/shared.module';
 
 
@@ -46,9 +46,9 @@ import { SharedModule } from './shared/shared.module';
 
     /* NGRX */
     StoreModule.forRoot(reducers, { metaReducers }),
-    EffectsModule.forRoot([
-      SettingsEffects
-    ])
+    // EffectsModule.forRoot([
+    //   // SettingsEffects
+    // ])
   ],
   providers: [
     StatusBar,

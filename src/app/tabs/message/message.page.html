@@ -4,7 +4,7 @@
   </ion-refresher> -->
 
   <ion-list lines="none" class="ion-padding-bottom">
-    <ion-item-sliding *ngFor="let user of messagesList">
+    <ion-item-sliding *ngFor="let user of messagesUser">
       <ion-item button detail="false" [routerLink]="['/message-detail', user.id]" routerdirection="forward">
         <ion-avatar slot="start">
           <img [src]="user.image">
@@ -12,6 +12,7 @@
         <ion-label>
           <h2>{{user.first_name}} {{user.last_name}}</h2>
           <p>{{user.last_message}}</p>
+          <p class="mailFormatTxt">{{user.email}}</p>
         </ion-label>
       </ion-item>
     </ion-item-sliding>

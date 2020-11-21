@@ -10,7 +10,6 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     TabsPageRoutingModule,
-
     SharedModule
   ],
   declarations: [TabsPage]

@@ -11,7 +11,7 @@ import { AppData } from 'src/app/providers/app-data';
   styleUrls: ['message.page.scss']
 })
 export class MessagePage implements OnInit {
-  messagesList: any[];
+  messagesUser: any[];
   searchMessageList: FormControl = new FormControl('');
   showSearchbar = false;
   isIos = false;
@@ -40,7 +40,7 @@ export class MessagePage implements OnInit {
    */
   async dataInit() {
     this.fakerService.getFaker().then((faker) => {
-      this.messagesList = Array.apply(null, Array(25)).map(() => {
+      this.messagesUser = Array.apply(null, Array(25)).map(() => {
         return {
           id: faker.random.uuid(),
           first_name: faker.name.findName().split(' ')[0],
@@ -51,6 +51,7 @@ export class MessagePage implements OnInit {
         };
       });
     });
+    this.messagesUser = await this.appData.getMessagesUser();
   }
 
   ngOnInit(): void {
