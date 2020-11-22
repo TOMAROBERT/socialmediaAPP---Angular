@@ -10,7 +10,7 @@
 <div class="w3-col m3 explore-content">
     <ion-header class="ion-no-border">
         <ion-toolbar>
-            <ion-segment-button> 
+            <ion-segment-button (click)="borderAdd()"> 
                 About us 
             </ion-segment-button>
         </ion-toolbar>
@@ -18,7 +18,7 @@
       <!-- Profile -->
     <div class="w3-card w3-round w3-white">
         <div class="w3-container">
-         <p class="w3-center"><img src="https://bower.io/img/bower-logo.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+         <p class="w3-center" style="transform: scale(1.3);padding-top:3px;"><img id="logoUs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUfvNaWRwyV93bpgJGU3jxEXFjNeYYaXvypw&usqp=CAU" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
          <hr>
          <p><i class="fa fa-university fa-fw w3-margin-right w3-text-theme"></i>Social app created for Unitbv-IESC</p>
          <p><i class="fa fa-laptop fa-fw w3-margin-right w3-text-theme"></i>Mobile OS - lab</p>
@@ -42,7 +42,7 @@
           <div id="Demo2" class="w3-hide w3-container">
             <div class="contactUs">
                 <div class="contactUsChild"><i class="fa fa-envelope-o">   robert.o.toma@student.unitbv.ro</i></div>
-                <div class="contactUsChild"><i class="fa fa-envelope-o">   raisa.draghiciu@student.unitbv.ro</i></div>
+                <div class="contactUsChild"><i class="fa fa-envelope-o">   iulia.draghiciu@student.unitbv.ro</i></div>
                 <!-- <div class="contactUsChild"><i class="fa fa-google-plus-square">   Some other text..</i></div> -->
             </div>
           </div>

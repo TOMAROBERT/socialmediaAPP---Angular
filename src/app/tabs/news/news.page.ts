@@ -51,26 +51,33 @@ export class NewsPage implements OnInit {
   }
 
   async dataInit() {
-    this.faker.getFaker().then((faker) => {
+    // this.faker.getFaker().then((faker) => {
       // generate posts
-      this.posts = Array.apply(null, Array(15)).map(() => {
+      // this.posts = Array.apply(null, Array(15)).map(() => {
         // new Post(
-        //   faker.random.uuid()
+          // id: faker.random.uuid(),
+          // seen : faker.random.number(60),
+          // first_name: faker.name.findName().split(' ')[0],
+          // last_name: faker.name.lastName(),
+          // image: faker.image.avatar(),
+          // content: faker.lorem.sentences(),
+          // likes: faker.random.number(100),
+          // comments: faker.random.number(100),
+          // shared: faker.random.number(100)
         // )
-        return {
-          id: faker.random.uuid(),
-          seen : faker.random.number(60),
-          first_name: faker.name.findName().split(' ')[0],
-          last_name: faker.name.lastName(),
-          image: faker.image.avatar(),
-          content: faker.lorem.sentences(),
-          likes: faker.random.number(100),
-          comments: faker.random.number(100),
-          shared: faker.random.number(100)
-        };
-      });
-    });
-
+        // return {
+          // id: faker.random.uuid(),
+          // seen : faker.random.number(60),
+          // first_name: faker.name.findName().split(' ')[0],
+          // last_name: faker.name.lastName(),
+          // image: faker.image.avatar(),
+          // content: faker.lorem.sentences(),
+          // likes: faker.random.number(100),
+          // comments: faker.random.number(100),
+          // shared: faker.random.number(100)
+        // };
+    //   });
+    // });
      this.posts = await this.appData.getPosts();
   }
 
@@ -79,13 +86,9 @@ export class NewsPage implements OnInit {
     this.dataInit();
   }
 
-  likesColor() {
-    console.log('am apasat pe like');
-  }
-  comColor() {
-    console.log('am apasat pe comm');
-  }
-  shareColor() {
-    console.log('am apasat pe share');
+  toggleHead(){
+    // console.log('am apasat pe toggle');
+    var element = document.getElementById("toggled");
+    element.classList.toggle("d-none");
   }
 }

@@ -20,6 +20,11 @@ export class ExplorePage implements OnInit {
 
   ngOnInit(): void {}
   
+  borderAdd(){
+    //  console.log('am apasat pe AboutUs');
+    var element = document.getElementById("logoUs");
+    element.classList.toggle("addBorder");
+  }
   toggleSpoiler(id) {
     var x = document.getElementById(id);
   if (x.className.indexOf("w3-show") == -1) {
