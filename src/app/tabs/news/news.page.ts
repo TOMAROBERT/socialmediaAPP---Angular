@@ -6,7 +6,7 @@ import { Config, MenuController, ModalController } from '@ionic/angular';
 
 import { AppData } from '../../providers/app-data';
 import { FakerService } from '../../services/faker/faker.service';
-// import Post from './../../model/Post'
+import Post from './../../model/Post'
 
 @Component({
   selector: 'app-news',
@@ -14,8 +14,8 @@ import { FakerService } from '../../services/faker/faker.service';
   styleUrls: ['news.page.scss']
 })
 export class NewsPage implements OnInit {
-  // posts: Post[] = [];
-  posts: any[] = [];
+  posts: Post[] = [];
+  // posts: any[] = [];
   activeSegment: FormControl = new FormControl('news');
   segments: any[] = [
     { title: 'News', value: 'news' }
@@ -51,33 +51,6 @@ export class NewsPage implements OnInit {
   }
 
   async dataInit() {
-    // this.faker.getFaker().then((faker) => {
-      // generate posts
-      // this.posts = Array.apply(null, Array(15)).map(() => {
-        // new Post(
-          // id: faker.random.uuid(),
-          // seen : faker.random.number(60),
-          // first_name: faker.name.findName().split(' ')[0],
-          // last_name: faker.name.lastName(),
-          // image: faker.image.avatar(),
-          // content: faker.lorem.sentences(),
-          // likes: faker.random.number(100),
-          // comments: faker.random.number(100),
-          // shared: faker.random.number(100)
-        // )
-        // return {
-          // id: faker.random.uuid(),
-          // seen : faker.random.number(60),
-          // first_name: faker.name.findName().split(' ')[0],
-          // last_name: faker.name.lastName(),
-          // image: faker.image.avatar(),
-          // content: faker.lorem.sentences(),
-          // likes: faker.random.number(100),
-          // comments: faker.random.number(100),
-          // shared: faker.random.number(100)
-        // };
-    //   });
-    // });
      this.posts = await this.appData.getPosts();
   }
 

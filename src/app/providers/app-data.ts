@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import { tap } from 'rxjs/operators';
+// import Post from './../../model/Post'
 
 export interface AppDataInterface {
     posts: any[];
@@ -24,8 +25,8 @@ export class AppData {
         ).toPromise();
     }
 
-
-    async getPosts() {
+    // async getPosts() : Post[]
+    async getPosts(){
         return this.load().then((data) => {
             return data.posts;
         });

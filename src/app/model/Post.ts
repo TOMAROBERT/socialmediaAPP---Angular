@@ -1,15 +1,11 @@
-export default class Post {
-    constructor(
-        public id:string,
-        public firstName:string,
-        public lastName:string,
-        public image:string,
-        public content:string,
-        public likes:number,
-        public comments:number,
-        public shared:number,
-        public views:number
-    ){
-        
-    }
+export default interface Post {
+        id:string;
+        firstName:string;
+        lastName:string;
+        image:string;
+        content:string;
+        likes:number;
+        comments:number;
+        shared:number;
+        views:number;
 }

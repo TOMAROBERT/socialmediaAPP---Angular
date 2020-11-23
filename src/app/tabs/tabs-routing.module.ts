@@ -40,7 +40,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs/news',
+    redirectTo: '/login',
     pathMatch: 'full'
   }
 ];

@@ -1,0 +1,44 @@
+ion-toolbar {
+  --background: #f5f5f3;
+}
+
+ion-content {
+  --background: url("https://www.ict-solutions-events.com/wp-content/uploads/2020/03/abstract-light-technology-lines-art-background-and-space-vector.jpg");
+    
+
+    ion-button {
+        text-transform: initial;
+        font-size: 17px;
+        margin: 14px 0px 10px 0px;
+        height: 48px;
+        font-size: 18px;
+        border-radius: 50px;
+        box-shadow: 1px 8px 8px 0px rgba(0, 0, 0, 0.05);
+        --box-shadow: none;
+    }
+  #header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      font-weight: 700;
+      font-size: 26px;
+      color: #010100;
+      margin-bottom: 9%;
+    }
+
+    img {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      border: 8px solid #ffffff;
+    }
+  }
+
+  #form {
+    margin-top: 15%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
