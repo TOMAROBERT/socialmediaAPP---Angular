@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "my-projectunitbv"
+  },
+  "targets": {
+    "my-projectunitbv": {
+      "hosting": {
+        "app": [
+          "my-projectunitbv"
+        ]
+      }
+    }
+  }
+}

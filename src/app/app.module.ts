@@ -20,6 +20,9 @@ import { reducers, metaReducers } from './shared/shared.state';
 // import { SettingsEffects } from './shared/ngrx/settings/settings.effects';
 import { SharedModule } from './shared/shared.module';
 
+import firebaseConfig from './firebase';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule,
     IonicModule.forRoot(),
+
 
     /* NGX TRANSLATE */
     TranslateModule.forRoot({
