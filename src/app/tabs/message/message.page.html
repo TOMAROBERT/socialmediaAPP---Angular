@@ -5,7 +5,7 @@
 
   <ion-list lines="none" class="ion-padding-bottom">
     <ion-item-sliding *ngFor="let user of messagesUser">
-      <ion-item button detail="false" [routerLink]="['/message-detail', user.id]" routerdirection="forward">
+      <ion-item button detail="false">
         <ion-avatar slot="start">
           <img [src]="user.image">
         </ion-avatar>

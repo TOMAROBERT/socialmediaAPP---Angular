@@ -4,10 +4,18 @@
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUfvNaWRwyV93bpgJGU3jxEXFjNeYYaXvypw&usqp=CAU" />
   </div>
 
-  <!-- <form id="form"> -->
-    <app-input placeholder="Username" (ngModel)="username" ></app-input>
-    <app-input type="password" placeholder="Password" (ngModel)="password"></app-input>
-    <ion-button expand="block" shape="round" routerLink="/tabs/news">Login</ion-button>
-    <ion-button expand="block" shape="round" routerLink="/signup">Sign Upp !</ion-button>
-  <!-- </form> -->
+  <form #form="ngForm" (ngSubmit)="login(form)" method="post">
+    <ion-item lines="none">
+      <ion-input [(ngModel)]="username" name="username"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-input [(ngModel)]="password" name="password" type="password"></ion-input>
+    </ion-item>  
+
+    <ion-button (click)="login()" type="submit" expand="block">Sign in</ion-button>
+    
+    <ion-text color="primary" id="wrongSubmit" style="display:none;">
+      <h4 >Wrong username or password !</h4>
+    </ion-text>
+  </form>
 </ion-content>

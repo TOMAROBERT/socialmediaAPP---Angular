@@ -5,14 +5,22 @@ ion-toolbar {
 ion-content {
   --background: url("https://www.ict-solutions-events.com/wp-content/uploads/2020/03/abstract-light-technology-lines-art-background-and-space-vector.jpg");
     
+    ion-item{
+      margin: auto;
+      width: 90%;
+      padding: 10px;
+      --border-radius: 35px;
+    }
 
     ion-button {
+        margin-top: 10px !important;
         text-transform: initial;
+        width: 84%;
         font-size: 17px;
-        margin: 14px 0px 10px 0px;
+        margin: auto;
         height: 48px;
         font-size: 18px;
-        border-radius: 50px;
+        --border-radius: 35px;
         box-shadow: 1px 8px 8px 0px rgba(0, 0, 0, 0.05);
         --box-shadow: none;
     }
@@ -20,6 +28,7 @@ ion-content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 10px;
 
     h1 {
       font-weight: 700;
@@ -40,5 +49,16 @@ ion-content {
     margin-top: 15%;
     padding-left: 30px;
     padding-right: 30px;
+  }
+
+  ion-text{
+    border-radius: 10px;
+    margin: 0px 27px;
+    background-color: palevioletred;
+  }
+
+  ion-text h4{
+    padding: 2px 0px;
+    text-align: center;
   }
 }

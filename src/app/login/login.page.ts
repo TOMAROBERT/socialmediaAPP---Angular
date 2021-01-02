@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { AngularFireAuth } from '@angular/fire/auth';
 // import auth from 'firebase/firebase-auth';
@@ -14,17 +15,21 @@ export class LoginPage implements OnInit {
 
   username: string ="";
   password: string ="";
-  constructor(public afAuth : AngularFireAuth) { }
+  constructor(public afAuth : AngularFireAuth , private router: Router) { }
 
   ngOnInit() {
   }
 
   async login(){
+    var x =document.getElementById("wrongSubmit");
     const { username,password } = this
     try{
-      const res = await this.afAuth.signInWithEmailAndPassword(username + '@email.com',password)
+      x.style.display = "none" ;
+      const res = await this.afAuth.signInWithEmailAndPassword(username,password);
+      this.router.navigateByUrl('/tabs/news');
     }catch(err){
-      console.dir(err); 
+      x.style.display = "block" ;
+      console.log("wrong username or pass");
     }
   }
 }
