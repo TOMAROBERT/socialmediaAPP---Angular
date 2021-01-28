@@ -1,8 +1,18 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Config } from '@ionic/angular';
+import { Config, IonSearchbar } from '@ionic/angular';
+// import { userInfo } from 'os';
+import { of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { tap } from 'rxjs/operators';
+
 
 import { AppData } from 'src/app/providers/app-data';
+
+export interface AppDataInterface {
+  posts: any[];
+  messagesUser: any[];
+}
 
 @Component({
   selector: 'app-message',
@@ -10,16 +20,20 @@ import { AppData } from 'src/app/providers/app-data';
   styleUrls: ['message.page.scss']
 })
 export class MessagePage implements OnInit {
+  @ViewChild('search',{static:false}) search :IonSearchbar;
   messagesUser: any[];
   searchMessageList: FormControl = new FormControl('');
   showSearchbar = false;
   isIos = false;
+  data: AppDataInterface;
 
+  // public messageUsers: Array<Object> = [];
+  // private searchedItem: any; 
   constructor(
     public config: Config,
-
-    private appData: AppData
-  ) { }
+    private appData: AppData,
+    public http: HttpClient 
+  ) {}
 
   /**
    * On refresh
@@ -49,4 +63,33 @@ export class MessagePage implements OnInit {
 
     this.dataInit();
   }
+
+  ionViewDidEnter(){
+    setTimeout(() => {
+      this.search.setFocus();
+    })
+  }
+
+  load(): Promise<AppDataInterface> {
+    if (this.data) { return of(this.data).toPromise(); }
+
+    return this.http.get('assets/data/data.json').pipe(
+        tap((data: AppDataInterface) => this.data = data)
+    ).toPromise();
+}
+
+  _ionChange(event){
+    console.log(event.detail.value);
+
+    const val = event.target.value;
+
+    this.messagesUser;
+    if (val && val.trim() !=''){
+      this.messagesUser = this.messagesUser.filter((user:any) => {
+        return (user.first_name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
+  }
+
+  
 }

@@ -3,6 +3,32 @@
     --ion-background-color: var(--ion-item-background);
 }
 
+ion-toolbar{
+    margin-top: 15px;
+    width: 80%;
+}
+ion-button{
+    margin-top: 19px;
+    width: 15%;
+    height: 43px;
+}
+
+ion-searchbar {
+
+    ::ng-deep {
+  
+      .searchbar-clear-icon {
+  
+        display: none !important;
+  
+      }
+  
+    }
+  
+}
+.searchHead{
+    display: inline-flex;
+}
 .message-icon-middle {
     vertical-align: middle;
 }

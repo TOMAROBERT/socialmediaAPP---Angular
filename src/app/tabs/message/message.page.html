@@ -3,9 +3,19 @@
     <ion-refresher-content pullingIcon="arrow-down-outline"></ion-refresher-content>
   </ion-refresher> -->
 
+
+  <!-- Baga si dark mode -->
+
+
   <ion-list lines="none" class="ion-padding-bottom">
+    <ion-grid class="searchHead">
+      <ion-toolbar>
+        <ion-searchbar #search  placeholder="Find someone" (ionChange)="_ionChange($event)"></ion-searchbar>
+      </ion-toolbar>
+      <ion-button color="dark" onclick="location.href='/tabs/messages';"><ion-icon name="trash-outline"></ion-icon></ion-button>
+    </ion-grid>
     <ion-item-sliding *ngFor="let user of messagesUser">
-      <ion-item button detail="false">
+      <ion-item>
         <ion-avatar slot="start">
           <img [src]="user.image">
         </ion-avatar>
@@ -18,3 +28,4 @@
     </ion-item-sliding>
   </ion-list>
 </ion-content>
+
