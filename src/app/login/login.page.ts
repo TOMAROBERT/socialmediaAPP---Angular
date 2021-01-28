@@ -21,7 +21,7 @@ export class LoginPage implements OnInit {
   }
 
   async login(){
-    var x =document.getElementById("wrongSubmit");
+    var x = document.getElementById("wrongSubmit");
     const { username,password } = this
     try{
       x.style.display = "none" ;

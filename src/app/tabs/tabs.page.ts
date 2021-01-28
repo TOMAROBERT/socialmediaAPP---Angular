@@ -4,8 +4,8 @@ import { MenuController, ModalController, AnimationController } from '@ionic/ang
 // import { MusicModalEnterAnimation, MusicModalLeaveAnimation } from '../app.animations';
 
 import { Howl } from 'howler';
-import { MusicController, PlayerEventOptions, initialPlayerEventOptions } from '../services/music-controller/music-controller.service';
-import { AppEventsService } from '../services/app-events/app-events.service';
+// import { MusicController, PlayerEventOptions, initialPlayerEventOptions } from '../services/music-controller/music-controller.service';
+// import { AppEventsService } from '../services/app-events/app-events.service';
 
 @Component({
   selector: 'app-tabs',
@@ -23,14 +23,14 @@ export class TabsPage implements OnInit, OnDestroy {
   player: Howl = null;
   isPlaying = false;
   progress = 0;
-  music: PlayerEventOptions = initialPlayerEventOptions;
+  // music: PlayerEventOptions = initialPlayerEventOptions;
 
   constructor(
-    private appEvents: AppEventsService,
+    // private appEvents: AppEventsService,
     private menu: MenuController,
     private animationCtrl: AnimationController,
-    private modalController: ModalController,
-    private musicController: MusicController
+    private modalController: ModalController
+    // private musicController: MusicController
   ) { }
 
   /**
@@ -48,7 +48,7 @@ export class TabsPage implements OnInit, OnDestroy {
   //  */
   tabClicked(tab) {
     if (this.activeTab === tab.id) {
-      this.appEvents.tabClicks.next(tab);
+      // this.appEvents.tabClicks.next(tab);
     }
   }
 

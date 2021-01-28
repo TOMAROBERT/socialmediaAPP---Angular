@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Config } from '@ionic/angular';
 
-import { FakerService } from '../../services/faker/faker.service';
 import { AppData } from 'src/app/providers/app-data';
 
 @Component({
@@ -19,8 +18,7 @@ export class MessagePage implements OnInit {
   constructor(
     public config: Config,
 
-    private appData: AppData,
-    private fakerService: FakerService
+    private appData: AppData
   ) { }
 
   /**
@@ -39,18 +37,10 @@ export class MessagePage implements OnInit {
    * Data init
    */
   async dataInit() {
-    this.fakerService.getFaker().then((faker) => {
+    
       this.messagesUser = Array.apply(null, Array(25)).map(() => {
-        return {
-          id: faker.random.uuid(),
-          first_name: faker.name.findName().split(' ')[0],
-          last_name: faker.name.lastName(),
-          email: faker.internet.email(),
-          image: faker.internet.avatar(),
-          last_message: faker.lorem.sentence()
-        };
+        return {};
       });
-    });
     this.messagesUser = await this.appData.getMessagesUser();
   }
 

@@ -5,7 +5,7 @@ import { Config, MenuController, ModalController } from '@ionic/angular';
 
 
 import { AppData } from '../../providers/app-data';
-import { FakerService } from '../../services/faker/faker.service';
+// import { FakerService } from '../../services/faker/faker.service';
 import Post from './../../model/Post'
 
 @Component({
@@ -15,7 +15,6 @@ import Post from './../../model/Post'
 })
 export class NewsPage implements OnInit {
   posts: Post[] = [];
-  // posts: any[] = [];
   activeSegment: FormControl = new FormControl('news');
   segments: any[] = [
     { title: 'News', value: 'news' }
@@ -30,7 +29,6 @@ export class NewsPage implements OnInit {
     private route: ActivatedRoute,
 
     private appData: AppData,
-    private faker: FakerService,
   ) {
     const tabParam = this.route.snapshot.queryParamMap.get('tab');
     if (this.segments.findIndex(x => x.value === tabParam) >= 0) {
