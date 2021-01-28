@@ -9,7 +9,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content>
+  <ion-content id="dark">
     <!-- <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
       <ion-refresher-content pullingIcon="arrow-down-outline"></ion-refresher-content>
     </ion-refresher> -->
@@ -23,8 +23,9 @@
           <ion-button class="post-some" color="light">
             <span class="post-some-title">What's new?</span>
           </ion-button>
-          <ion-buttons slot="end" (click)="toggleHead()">
-            <ion-toggle color="secondary" ></ion-toggle>
+          <!-- (click)="toggleHead()" -->
+          <ion-buttons slot="end">
+            <ion-toggle color="secondary" (ionChange)='switchTheme()'></ion-toggle>
           </ion-buttons>
         </ion-item>
       </ion-card>

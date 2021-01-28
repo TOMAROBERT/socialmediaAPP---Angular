@@ -41,3 +41,10 @@
 ion-header{
     padding-bottom: 5px;
 }
+
+.theme-dark{
+    ion-content{
+        background-color: black;
+        color: #ffffff;
+    }
+}

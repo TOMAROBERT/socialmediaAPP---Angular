@@ -14,6 +14,7 @@ import Post from './../../model/Post'
   styleUrls: ['news.page.scss']
 })
 export class NewsPage implements OnInit {
+  theme:string = "light";
   posts: Post[] = [];
   activeSegment: FormControl = new FormControl('news');
   segments: any[] = [
@@ -61,5 +62,15 @@ export class NewsPage implements OnInit {
     // console.log('am apasat pe toggle');
     var element = document.getElementById("toggled");
     element.classList.toggle("d-none");
+  }
+
+  switchTheme(){
+    if(this.theme=="light"){
+      document.body.classList.add("dark");
+      this.theme="dark";
+    }else{
+      document.body.classList.remove("dark");
+      this.theme="light";
+    }
   }
 }
