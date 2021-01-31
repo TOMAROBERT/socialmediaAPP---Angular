@@ -30,12 +30,7 @@ export class NewsPage implements OnInit {
     private route: ActivatedRoute,
 
     private appData: AppData,
-  ) {
-    const tabParam = this.route.snapshot.queryParamMap.get('tab');
-    if (this.segments.findIndex(x => x.value === tabParam) >= 0) {
-      this.activeSegment.setValue(tabParam);
-    }
-  }
+  ) {}
 
   /**
    * On refresh
@@ -56,12 +51,6 @@ export class NewsPage implements OnInit {
   ngOnInit(): void {
     this.isIos = this.config.get('mode') === 'ios';
     this.dataInit();
-  }
-
-  toggleHead(){
-    // console.log('am apasat pe toggle');
-    var element = document.getElementById("toggled");
-    element.classList.toggle("d-none");
   }
 
   switchTheme(){
